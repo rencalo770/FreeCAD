@@ -1,6 +1,21 @@
 # March 2021, the oldest we have to support : Ununtu 18.04 LTS
 cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
 
+add_definitions(-DUNICODE -D_UNICODE)
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+#set(OCC_INCLUDE_DIR  "C:\\OpenCASCADE-7.7.0-vc14-64\\opencascade-7.7.0\\inc")
+#set(VTK_DIR "C:\\OpenCASCADE-7.7.0-vc14-64\\vtk-6.1.0-vc14-64\\lib\\cmake\\vtk-6.1")
+#set(FREECAD_LIBPACK_DIR "C:\\Users\\wp\\Downloads\\LibPack-OCC76-V2\\lib")
+SET(BOOST_ROOT "C:/local/boost_1_67_0")
+SET(BOOST_INCLUDEDIR "${BOOST_ROOT}/boost")
+SET(PYTHON_DEBUG_LIBRARY "C:/Users/wp/Downloads/LibPack-OCC76-V2/bin/libs/python38_d.lib")
+SET(PYTHON_EXECUTABLE "C:/Users/wp/Downloads/LibPack-OCC76-V2/bin/python.exe")
+SET(PYTHON_INCLUDE_DIR "C:/Users/wp/Downloads/LibPack-OCC76-V2/bin/include")
+SET(PYTHON_LIBRARY "C:/Users/wp/Downloads/LibPack-OCC76-V2/bin/libs/python38.lib")
+
+
 # policy CMP0072 was introduced with CMake 3.11
 # relates to FindOpenGL module
 # and cache variables OPENGL_gl_LIBRARY, OPENGL_glu_LIBRARY
